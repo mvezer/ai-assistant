@@ -76,6 +76,13 @@ function stop_spinner {
   unset _sp_pid
 }
 
+function check_if_jq_installed () {
+  if [ -z $(command -v jq)]; then
+    echo "You need to have 'jq' installed in order to use the ai-assistant"
+    exit -1
+  fi
+}
+
 function get_answer () {
   model="text-davinci-003"
   temperature=0
@@ -117,6 +124,8 @@ function interactive_mode () {
     process_answer $answer
   done
 }
+
+check_if_jq_installed
 
 if [ -z $1 ]; then
   interactive_mode
