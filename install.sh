@@ -1,4 +1,4 @@
-INSTALL_DIR="$HOME/install/dir"
+INSTALL_DIR="$HOME/.local/share/bin"
 REMOTE="https://github.com/mvezer/ai-assistant.git"
 
 if [ -z $(command -v git) ]; then
